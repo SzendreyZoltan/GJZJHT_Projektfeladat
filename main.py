@@ -11,7 +11,6 @@ class IdojarasApp:
     self.root.geometry("420x425")
     self.root.resizable(False, False)
 
-    # Virtuális városok létrehozása az SZZ_modul osztályával
     self.varosok = [
         VarosIdojaras("Budapest", 20),
         VarosIdojaras("London", 12),
@@ -19,8 +18,7 @@ class IdojarasApp:
         VarosIdojaras("Reykjavik", 5),
     ]
     self.aktualis_index = 0
-
-    # Felületi címkék (Label)
+    
     self.cim_label = tk.Label(
         root, text="", font=("Arial", 18, "bold"), pady=12
     )
@@ -34,7 +32,6 @@ class IdojarasApp:
     )
     self.zona_label.pack()
 
-    # Vezérlőgombok
     self.kovetkezo_gomb = tk.Button(
         root,
         text="Következő város ➔",
@@ -71,7 +68,6 @@ class IdojarasApp:
     )
     self.atlag_gomb.pack(pady=8)
 
-    # Kezdeti nézet betöltése
     self.frissit_nezet()
 
   def kovetkezo_varos(self):
