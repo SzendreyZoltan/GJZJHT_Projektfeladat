@@ -71,24 +71,20 @@ class IdojarasApp:
     self.frissit_nezet()
 
   def kovetkezo_varos(self):
-    """Váltás a következő városra a listában."""
     self.aktualis_index = (self.aktualis_index + 1) % len(self.varosok)
     self.frissit_nezet()
 
   def homerseklet_novel(self):
-    """Az aktuális város hőmérsékletének növelése 1 °C-kal."""
     aktualis_varos = self.varosok[self.aktualis_index]
     aktualis_varos.homersekletet_valtoztat(1)
     self.frissit_nezet()
 
   def homerseklet_csokkent(self):
-    """Az aktuális város hőmérsékletének csökkentése 1 °C-kal."""
     aktualis_varos = self.varosok[self.aktualis_index]
     aktualis_varos.homersekletet_valtoztat(-1)
     self.frissit_nezet()
 
   def statisztika_mutat(self):
-    """Átlaghőmérséklet lekérése a modulból és megjelenítése."""
     atlag = atlaghomerseklet_szamitasa(self.varosok)
     messagebox.showinfo(
         "Statisztikai Elemzés",
@@ -97,7 +93,6 @@ class IdojarasApp:
     )
 
   def frissit_nezet(self):
-    """Frissíti a képernyőn megjelenő szövegeket, valamint a háttér- és szövegszíneket."""
     varos = self.varosok[self.aktualis_index]
     zona_szoveg, hatter_szin, szoveg_szin = varos.zona_meghatarozasa()
 
